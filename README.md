@@ -85,4 +85,3 @@ If the server is running two API endpoints will be available at the configured h
 ## Known issues
 
 - `KeyError` occurs whilst looping over the dictionary of facts. I have used a try/except block to bypass the issue as I was unable to get to the root of it in time.
-- Some unused imports and empty functions from initial boilerpolating. These have been left in place to demostrate what would have been developed given more time.
