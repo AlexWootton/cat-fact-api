@@ -26,44 +26,61 @@ pipenv install
 
 ## Usage
 
-Provides a formatted output displaying the fact ID and fact body text when run.
+### List
+
+Prints a list of all stored cat facts to the command line. Can be set to output as either JSON or pretty printed using the `-F` or `--format` flags. Defaults to pretty printed (as below).
 
 Example:
 
 ```shell
-> ./cat-facts.py
+> ./cat-facts.py list
 ID: 5cd86b0e1dc6d50015ec2f08 | Norwegian Forest Cats are usually very people friendly.
 ID: 5d38b2510f1c57001592f12e | Courgars are the largest wild cats that can purr.
 ID: 5ebbf5dd8046d00017776020 | Cats are fat, sometimes.
 ```
 
+### Delete
+
+Allows for the deletion of specific facts by ID.
+
+Example:
+
+```shell
+> ./cat-facts.py delete --id 5ebbf5dd8046d00017776020
+Fact ID: 5ea7496761cd4d0017498a94 has been deleted.
+```
+
+**Note:** You will be prompted for an ID if one is not provided when the command is run.
+
+### Server
+
+Starts an HTTP server that provides two REST API endpoints (detailed below).
+
+Usage example:
+
+```bash
+cat-facts.py server [-h --host] [-p --port] [--debug]
+```
+
+`--host` specifies host address to listen on
+
+`--port` specifies the port to listen on
+
+`--debug` enables debug mode on the HTTP server
+
+### API
+
+If the server is running two API endpoints will be available at the configured host address and port.
+
+`/api/v1/facts` - produces all stored facts in JSON format.
+
+`/api/v1/facts/<id>` - takes a fact ID and returns the matching fact in JSON format if it exists.
+
 ## Planned improvements
 
-- Addition of an API endpoint to serve the currently stored facts as JSON over HTTP.
 - Additional formatting options for command line output. Including:
-  - JSON
   - YAML
   - CSV
-
-### Proposed API usage
-
-Start serving the API by running:
-
-```bash
-cat-facts.py server [-h host] [-p port]
-```
-
-Results in a single endpoint at the root path `/` providing a filtered list of cat facts ([source](https://cat-fact.herokuapp.com/facts)) in JSON format.
-
-### Proposed output formatting usage
-
-Running the application without any arguments will return a filtered, pretty printed list of cat facts:
-
-```bash
-cat-facts.py [-F format]
-```
-
-Valid options for output format would be `json`, `yaml`, `csv` or the default `pretty`.
 
 ## Known issues
 
