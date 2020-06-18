@@ -8,9 +8,9 @@ jobs:
     steps:
     - uses: docker/build-push-action@v1
       with:
-        username: ${{ GITHUB_ACTOR }}
+        username: $GITHUB_ACTOR
         password: ${{ secrets.GITHUB_TOKEN }}
         registry: docker.pkg.github.com
-        repository: ${{ GITHUB_REPOSITORY }}
+        repository: $GITHUB_REPOSITORY
         tag_with_ref: true
         tag_with_sha: true
