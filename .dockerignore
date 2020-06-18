@@ -1,0 +1,5 @@
+Pipfile*
+*.sqlite
+.vscode
+.scratch
+.gitignore
