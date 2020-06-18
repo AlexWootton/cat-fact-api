@@ -1,11 +1,12 @@
 from peewee import *
 
 
-DATABASE = SqliteDatabase('catfacts.sqlite')
+DATABASE = SqliteDatabase("catfacts.sqlite")
 
 
 class Fact(Model):
     """Contains the ids and body text of all accepted facts"""
+
     _id = CharField(unique=True)
     text = TextField()
 
@@ -15,6 +16,7 @@ class Fact(Model):
 
 class Blacklist(Model):
     """Contains the ids of all blacklisted facts"""
+
     _id = CharField(unique=True)
 
     class Meta:
