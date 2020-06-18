@@ -15,6 +15,6 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: ${{ github.repository }}/${{ github.event.repository.name }}
+          repository: alexwootton/cat-facts/cat-facts
           tag_with_ref: true
           tag_with_sha: true
