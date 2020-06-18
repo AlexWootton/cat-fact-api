@@ -14,15 +14,15 @@ readme = ''
 setup(
     long_description=readme,
     name='cat-facts',
-    version='2.1.1',
+    version='2.2.0',
     description='An API that produces a list of facts about cats!',
     python_requires='==3.*,>=3.8.0',
     author='Alex Wootton',
     author_email='agwootton@gmail.com',
     entry_points={"console_scripts": ["cat-facts = cat_facts"]},
-    packages=['cat_facts'],
+    packages=[],
     package_dir={"": "."},
-    package_data={"cat_facts": ["*.sqlite"]},
+    package_data={},
     install_requires=[
         'click==7.*,>=7.1.2', 'flask==1.*,>=1.1.2',
         'flask-restful==0.*,>=0.3.8', 'peewee==3.*,>=3.13.3',
@@ -31,7 +31,7 @@ setup(
     extras_require={
         "dev": [
             "black==19.*,>=19.10.0.b0", "flake8==3.*,>=3.8.3",
-            "pylint==2.*,>=2.5.3", "pytest==5.*,>=5.4.3"
+            "pytest==5.*,>=5.4.3"
         ]
     },
 )

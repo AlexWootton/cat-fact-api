@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cat-facts"
-version = "2.1.1"
+version = "2.2.0"
 description = "An API that produces a list of facts about cats!"
 authors = ["Alex Wootton <agwootton@gmail.com>"]
 
